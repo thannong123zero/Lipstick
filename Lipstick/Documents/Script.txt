@@ -1,0 +1,5 @@
+﻿Unit 1: Gioi thieu tong quan ve series va project
+Unit 2: Gioi thieu ve kien truc cua project va vai tro cua tung thu muc
+Unit 3: Kien thuc ve Controler View Model
+Unit 4: Tage Helper
+Unit 5: Kien thuc ve Layout

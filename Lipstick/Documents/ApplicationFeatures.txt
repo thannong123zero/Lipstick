@@ -1,0 +1,18 @@
+﻿Web Client
+ - Hien thi danh sach category
+ - Hien thi danh sach subcategory
+ - Hien thi danh sach product
+ - Hien thi chi tiet product
+ - Them product vao gio hang
+ - Xoa product khoi gio hang
+ - Cap nhat so luong product trong gio hang
+ - Thanh toan
+ - Su dung ben thu 3: recaptcha,facebook messenger
+
+Web CRM 
+ - Them,xoa,sua category
+ - Them,xoa,sua subcategory
+ - Them,xoa,sua product
+ - Hien thi danh sach order
+ - Hien thi chi tiet order
+ - Xac nhan order
