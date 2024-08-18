@@ -1,0 +1,68 @@
+﻿@model SharedLibrary.UserInterfaceDTO.MenuItemUI
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container pt-2">
+    <h3 class="text-capitalize">@_language.Getkey("addMenuItem")</h3>
+    <hr />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row mb-2">
+            <div class="form-group col-6">
+                <label asp-for="MenuGroupID" class="control-label nunito-regular-16 text-capitalize">@_language.Getkey("selectMenuGroup")</label> <span style="color:red;">(*)</span>
+                <select asp-for="MenuGroupID" class="form-control nunito-regular-16" asp-items="@ViewBag.MenuGroupList"></select>
+                <span asp-validation-for="MenuGroupID" class="text-danger nunito-regular-16"></span>
+            </div>
+        </div>
+        <div class="d-flex flex-row mb-2">
+            <div class="form-group form-check me-3">
+                <label class="form-check-label text-capitalize">
+                    <input class="form-check-input" asp-for="IsActive" /> @_language.Getkey("isActive")
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label text-capitalize me-2">@_language.Getkey("priority"):</label>
+                <input asp-for="Priority" class="priorityBox" min="1">
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="form-group col-6">
+                <label asp-for="NameEN" class="control-label text-capitalize">@_language.Getkey("nameEN"):</label>
+                <input asp-for="NameEN" class="form-control" />
+                <span asp-validation-for="NameEN" class="text-danger"></span>
+            </div>
+            <div class="form-group col-6">
+                <label asp-for="NameVN" class="control-label text-capitalize">@_language.Getkey("nameVN"):</label>
+                <input asp-for="NameVN" class="form-control" />
+                <span asp-validation-for="NameVN" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="form-group col-6">
+                <label asp-for="DescriptionEN" class="control-label text-capitalize">@_language.Getkey("descriptionEN"):</label>
+                <textarea asp-for="DescriptionEN" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="DescriptionEN" class="text-danger"></span>
+            </div>
+            <div class="form-group col-6">
+                <label asp-for="DescriptionVN" class="control-label text-capitalize">@_language.Getkey("descriptionVN"):</label>
+                <textarea asp-for="DescriptionVN" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="DescriptionVN" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group d-flex justify-content-end">
+            <input type="submit" value="@_language.Getkey("create")" class="btn btn-success me-2 text-capitalize" />
+            <a asp-action="Index" asp-controller="MenuItem" class="btn btn-primary text-capitalize">@_language.Getkey("backToList")</a>
+        </div>
+    </form>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

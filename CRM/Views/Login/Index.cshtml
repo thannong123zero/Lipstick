@@ -1,0 +1,52 @@
+﻿@model LoginViewModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>@ViewData["Title"] - CRM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/assets/icons/themify-icons/themify-icons.css" />
+    <link href="~/css/login.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="loginPage">
+        <div class="row customLayout pt-4">
+            <div class="col-6">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-6">
+                <form asp-action="Index" asp-controller="Login" method="post">
+                    <h1 class="card-title text-center text-capitalize">@_language.Getkey("signIn")</h1>
+                    <div class="form-outline mt-4 position-relative">
+                        <span class="text-danger">@ViewBag.WrongAccount</span>
+                        <br/>
+                        <label class="form-label text-capitalize">@_language.Getkey("userName"):</label>
+                        <input type="email" asp-for="Email" class="form-control" placeholder="Email..." />
+                        <span class="ti-lock customIcon"></span>
+                    </div>
+                    <div class="form-outline mt-2 position-relative">
+                        <label class="form-label text-capitalize">@_language.Getkey("password"):</label>
+                        <input type="password" asp-for="Password" class="form-control" placeholder="Password..." />
+                        <span class="ti-key customIcon"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4 mb-3 w-100">
+                        @_language.Getkey("login")
+                    </button>
+                    <a asp-action="ResetPassword" asp-controller="Login">@_language.Getkey("areYouForgetPassword")</a>
+                </form>
+            </div>
+        </div>
+    </div>
+@*     <script src="~/js/scripts.js"></script> *@
+</body>
+</html>
+

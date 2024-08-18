@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SharedLibrary.UserInterfaceDTO.UnitUI>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container pt-2">
+    <h2 class="text-capitalize">@_language.Getkey("productUnitList")</h2>
+    <div class="d-flex justify-content-end">
+        <a asp-action="Create" class="btn btn-success text-capitalize">@_language.Getkey("create")</a>
+    </div>
+    @if (Model != null)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-capitalize">
+                        @* @Html.DisplayNameFor(model => model.NameEN) *@
+                        @_language.Getkey("nameEN")
+                    </th>
+                    <th class="text-capitalize">
+                        @* @Html.DisplayNameFor(model => model.NameVN) *@
+                        @_language.Getkey("nameVN")
+
+                    </th>
+                    <th class="text-capitalize">
+                        @* @Html.DisplayNameFor(model => model.IsActive) *@
+                        @_language.Getkey("isActive")
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.ID">
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameEN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NameVN)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsActive)
+                        </td>
+                        <td class="d-flex justify-content-end">
+                            <a asp-action="Update" asp-route-ID="@item.ID" class="btn btn-primary me-2 text-capitalize">@_language.Getkey("details")</a>
+                            <button onclick="CheckPermissionToDelete('@item.ID')" class="btn btn-danger text-capitalize">@_language.Getkey("delete")</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>
+<div class="modal fade" id="deletionModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel text-capitalize">@_language.Getkey("notification")</h5>
+            </div>
+            <div class="modal-body">
+                Are you sure? you want to delete the abc!
+                <input type="hidden" id="removeTheCategory" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" onclick="RequestDeletion()" class="btn btn-primary text-capitalize">@_language.Getkey("confirmation")</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@_language.Getkey("close")</button>
+            </div>
+        </div>
+    </div>
+</div>

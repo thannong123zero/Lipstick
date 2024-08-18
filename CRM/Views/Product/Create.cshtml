@@ -1,0 +1,136 @@
+﻿@model SharedLibrary.UserInterfaceDTO.ProductUI
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container pt-2">
+    <h3 class="text-capitalize">@_language.Getkey("addProduct")</h3>
+    <hr />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active text-capitalize" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab" aria-controls="summary" aria-selected="true">@_language.Getkey("summary")</button>
+            </li>
+            <li class="nav-item " role="presentation">
+                <button class="nav-link text-capitalize" id="contentEnglish-tab" data-bs-toggle="tab" data-bs-target="#contentEnglish" type="button" role="tab" aria-controls="contentEnglish" aria-selected="false">@_language.Getkey("contentEN")</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-capitalize" id="contentVietNamese-tab" data-bs-toggle="tab" data-bs-target="#contentVietNamese" type="button" role="tab" aria-controls="contentVietNamese" aria-selected="false">@_language.Getkey("contentVN")</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-capitalize" id="image-tab" data-bs-toggle="tab" data-bs-target="#image" type="button" role="tab" aria-controls="image" aria-selected="false">@_language.Getkey("images")</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active pt-2" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+                <div class="form-group mb-2">
+                    <label class="form-check-label me-2 text-capitalize">
+                        <input class="form-check-input" asp-for="IsActive" /> @_language.Getkey("isActive")
+                    </label>
+                    <label class="form-check-label text-capitalize">
+                        <input class="form-check-input" asp-for="InHomePage" /> @_language.Getkey("inHomePage")
+                    </label>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group col-6">
+                        <label asp-for="NameEN" class="control-label text-capitalize">@_language.Getkey("nameEN"):</label>
+                        <input asp-for="NameEN" class="form-control" />
+                        <span asp-validation-for="NameEN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="NameVN" class="control-label text-capitalize">@_language.Getkey("nameVN"):</label>
+                        <input asp-for="NameVN" class="form-control" />
+                        <span asp-validation-for="NameVN" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="form-group col-6">
+                        <label asp-for="DescriptionEN" class="control-label text-capitalize">@_language.Getkey("descriptionEN"):</label>
+                        <textarea asp-for="DescriptionEN" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="DescriptionEN" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-6">
+                        <label asp-for="DescriptionVN" class="control-label text-capitalize">@_language.Getkey("descriptionVN"):</label>
+                        <textarea asp-for="DescriptionVN" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="DescriptionVN" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="form-group col-6">
+                                <label asp-for="MenuItemID" class="control-label text-capitalize">@_language.Getkey("selectMenuItem"):</label>
+                                <input asp-for="MenuItemID" class="form-control" />
+                                <span asp-validation-for="MenuItemID" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-6">
+                                <label asp-for="UnitID" class="control-label text-capitalize">@_language.Getkey("selectUnitProduct"):</label>
+                                <input asp-for="UnitID" class="form-control" />
+                                <span asp-validation-for="UnitID" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="form-group col-4">
+                                <label asp-for="Price" class="control-label text-capitalize">@_language.Getkey("price"):</label>
+                                <input asp-for="Price" class="form-control" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-4">
+                                <label asp-for="Discount" class="control-label text-capitalize">@_language.Getkey("discount"):</label>
+                                <input asp-for="Discount" class="form-control" />
+                                <span asp-validation-for="Discount" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col-4">
+                                <label asp-for="Quantity" class="control-label text-capitalize">@_language.Getkey("quantity"):</label>
+                                <input asp-for="Quantity" class="form-control" />
+                                <span asp-validation-for="Quantity" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade pt-2" id="contentEnglish" role="tabpanel" aria-labelledby="contentEnglish-tab">
+                <div class="form-group">
+                    <label asp-for="ContentEN" class="control-label text-capitalize">@_language.Getkey("contentEN"):</label>
+                    @* <input asp-for="ContentEN" class="form-control" /> *@
+                    <span asp-validation-for="ContentEN" class="text-danger"></span>
+                    <div id="ContentEN"></div>
+                </div>
+            </div>
+            <div class="tab-pane fade pt-2" id="contentVietNamese" role="tabpanel" aria-labelledby="contentVietNamese-tab">
+                <div class="form-group">
+                    <label asp-for="ContentVN" class="control-label text-capitalize">@_language.Getkey("contentVN"):</label>
+                    @* <input asp-for="ContentVN" class="form-control" /> *@
+                    <span asp-validation-for="ContentVN" class="text-danger"></span>
+                    <div id="ContentVN"></div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade pt-2" id="image" role="tabpanel" aria-labelledby="image-tab">
+                <div class="form-group">
+                    <label asp-for="Images" class="control-label text-capitalize">@_language.Getkey("images"):</label>
+                    <input asp-for="Images" class="form-control" />
+                    <span asp-validation-for="Images" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+        <div class="form-group d-flex justify-content-end mt-2">
+            <input type="submit" value="@_language.Getkey("create")" class="btn btn-success me-2 text-capitalize" />
+            <a asp-action="Index" asp-controller="Product" class="btn btn-primary text-capitalize">@_language.Getkey("backToList")</a>
+        </div>
+    </form>
+</div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        CreateCKEditor("ContentEN");
+        CreateCKEditor("ContentVN");
+    </script>
+}

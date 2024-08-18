@@ -1,0 +1,54 @@
+/*#region ckeditor*/
+#container {
+    width: 1000px;
+    margin: 20px auto;
+}
+
+.ck-editor__editable[role="textbox"] {
+    /* Editing area */
+    min-height: 200px;
+}
+
+.ck-content .image {
+    /* Block images */
+    max-width: 80%;
+    margin: 20px auto;
+}
+
+/*#endregion*/
+
+.changeLanguage{
+    width: 25px;
+}
+
+.priorityBox {
+    width: 50px;
+    border-radius: 0.375rem;
+    border: 1px solid #ced4da;
+    text-align: center;
+}
+    .priorityBox:focus {
+        color: #212529;
+        background-color: #fff;
+        border-color: #86b7fe;
+        outline: 0;
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+.sb-sidenav-menu::-webkit-scrollbar {
+    width: 8px;
+}
+/* Track */
+.sb-sidenav-menu::-webkit-scrollbar-track {
+    background: #6d6e70;
+}
+/* Handle */
+.sb-sidenav-menu::-webkit-scrollbar-thumb {
+    background: #343A40;
+}
+
+.brandAvatar{
+    max-height: 110px;
+    max-width: 110px;
+    border: 1px solid #ccc;
+}

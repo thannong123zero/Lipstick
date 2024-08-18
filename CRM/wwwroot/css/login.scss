@@ -1,0 +1,43 @@
+﻿html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to bottom right, #00308F,#7CB9E8);
+}
+
+.loginPage {
+    width: 100%;
+    height: 100vh;
+    max-width: 1160px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    .customLayout {
+        min-height: 65vh;
+        border: 2px solid #333;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(136.66deg, #6D6D6D -9.13%,#080808 92.54%);
+        background: #ffff;
+        position: static;
+        z-index: 1;
+    }
+
+    .customIcon {
+        position: absolute;
+        bottom: 8px;
+        right: 10px;
+        font-size: 18px;
+        font-weight: 600;
+    }
+}

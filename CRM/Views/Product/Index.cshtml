@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SharedLibrary.UserInterfaceDTO.ProductUI>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="container pt-2">
+    <h2 class="text-capitalize">@_language.Getkey("productList")</h2>
+
+    <div class="d-flex justify-content-end">
+        <a asp-action="Create" asp-controller="Product" class="btn btn-success">@_language.Getkey("create")</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-capitalize">
+                    @* @Html.DisplayNameFor(model => model.NameEN) *@
+                    @_language.Getkey("nameEN")
+                </th>
+                <th class="text-capitalize">
+                    @* @Html.DisplayNameFor(model => model.NameVN) *@
+                    @_language.Getkey("nameVN")
+
+                </th>
+                <th class="text-capitalize">
+                    @* @Html.DisplayNameFor(model => model.Price) *@
+                    @_language.Getkey("price")
+
+                </th>
+                <th class="text-capitalize">
+                    @* @Html.DisplayNameFor(model => model.Discount) *@
+                    @_language.Getkey("discount")
+
+                </th>
+                <th class="text-capitalize">
+                    @* @Html.DisplayNameFor(model => model.Quantity) *@
+                    @_language.Getkey("quantity")
+
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameEN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameVN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Discount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Quantity)
+                    </td>
+                    <td class="d-flex justify-content-end">
+                        <a asp-action="Update" asp-controller="product" asp-route-ID="@item.ID" class="btn btn-primary me-2 text-capitalize">@_language.Getkey("details")</a>
+                        <button class="btn btn-danger text-capitalize">@_language.Getkey("delete")</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
