@@ -1049,6 +1049,136 @@ body {
 /*#region*/
 /*#region responsive*/
 /*#endregion*/
+.blogPage {
+  max-width: 1050px;
+  margin: auto;
+  padding: 30px 0;
+}
+@media only screen and (width < 1200px) {
+  .blogPage {
+    padding: 0 1rem;
+  }
+}
+.blogPage .large-9 {
+  max-width: 75%;
+}
+.blogPage .large-3 {
+  max-width: 25%;
+  border-left: 1px solid #ececec;
+  padding: 0 30px 30px;
+}
+.blogPage .archive-page-header .is-large {
+  font-size: 1.5rem;
+  color: #555;
+}
+.blogPage .col-inner {
+  position: relative;
+}
+.blogPage .col-inner .plain {
+  display: flex;
+  list-style: none;
+  text-decoration: none;
+}
+.blogPage .col-inner .plain .box-image img {
+  width: 300px;
+  height: 175px;
+  object-fit: cover;
+}
+.blogPage .col-inner .plain .box-text {
+  padding: 0.7rem 1.5rem 1.4rem;
+  position: relative;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.blogPage .col-inner .plain .box-text .post-title {
+  font-size: 1.15rem;
+  color: #d06767;
+}
+.blogPage .col-inner .plain .from_the_blog_excerpt {
+  color: #000;
+}
+.blogPage .col-inner .plain .badge {
+  width: 3.8em;
+  height: 3.8em;
+  display: block;
+}
+.blogPage .col-inner .plain .post-date {
+  position: absolute;
+  top: 7%;
+  left: -6px;
+  border: 2px solid #e32e2d;
+  border-radius: unset;
+  background: #fff;
+  color: #e32e2d;
+}
+.blogPage .col-inner .plain .post-date .badge-inner {
+  text-align: center;
+  vertical-align: middle;
+  padding: 2px;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+.blogPage .col-inner .plain .post-date .badge-inner .post-date-day {
+  font-size: 1rem;
+  line-height: 16px;
+}
+.blogPage .col-inner .plain .post-date .badge-inner .is-xsmall {
+  font-size: 0.7rem;
+}
+.blogPage .plain:hover .from_the_blog_excerpt {
+  color: #e7328e;
+}
+.blogPage .plain:hover .post-date {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+.blogPage .is-divider {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  max-width: 30px;
+  height: 2px;
+  margin: 1rem 0;
+}
+.blogPage .widget {
+  margin-bottom: 1.5rem;
+}
+.blogPage .widget .widget-title {
+  font-size: 1em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.blogPage .widget ul {
+  margin: 0;
+  padding-left: 0;
+}
+.blogPage .widget ul li {
+  list-style: none;
+  border-bottom: 1px solid #ececec;
+}
+.blogPage .widget a {
+  display: inline-block;
+  padding: 8px 0;
+  font-size: 15px;
+  line-height: 22px;
+  text-decoration: none;
+  color: #000;
+}
+.blogPage .widget a:hover {
+  color: #e7328e;
+}
+.blogPage .widget p {
+  font-size: 16px;
+}
+
+/*#region width*/
+/*#endregion*/
+/*#region color*/
+/*#endregion*/
+/*#region font-size*/
+/*#region*/
+/*#region responsive*/
+/*#endregion*/
 .notFoundPage {
   max-width: 1050px;
   min-height: 300px;
