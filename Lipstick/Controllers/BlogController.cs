@@ -4,9 +4,13 @@ namespace Lipstick.Controllers
 {
     public class BlogController : Controller
     {
-        public IActionResult Index()
+        public ActionResult<List<Object>> Index()
         {
-            return View();
+            var blogs = new List<Object>
+
+            {
+            };
+            return View(blogs);
         }
     }
 }
