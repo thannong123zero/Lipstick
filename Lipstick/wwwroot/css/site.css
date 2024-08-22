@@ -1053,19 +1053,15 @@ body {
   max-width: 1050px;
   margin: auto;
   padding: 30px 0;
-}
-@media only screen and (width < 1200px) {
-  .blogPage {
-    padding: 0 1rem;
+  /* .large-9 {
+      max-width: 75%;
   }
-}
-.blogPage .large-9 {
-  max-width: 75%;
-}
-.blogPage .large-3 {
-  max-width: 25%;
-  border-left: 1px solid #ececec;
-  padding: 0 30px 30px;
+
+  .large-3 {
+      max-width: 25%;
+      border-left: 1px solid #ececec;
+      padding: 0 30px 30px;
+  }*/
 }
 .blogPage .archive-page-header .is-large {
   font-size: 1.5rem;
@@ -1074,35 +1070,35 @@ body {
 .blogPage .col-inner {
   position: relative;
 }
-.blogPage .col-inner .plain {
+.blogPage .plain {
   display: flex;
   list-style: none;
   text-decoration: none;
 }
-.blogPage .col-inner .plain .box-image img {
+.blogPage .plain .box-image img {
   width: 300px;
   height: 175px;
   object-fit: cover;
 }
-.blogPage .col-inner .plain .box-text {
+.blogPage .plain .box-text {
   padding: 0.7rem 1.5rem 1.4rem;
   position: relative;
   width: 100%;
   font-size: 0.9rem;
 }
-.blogPage .col-inner .plain .box-text .post-title {
+.blogPage .plain .box-text .post-title {
   font-size: 1.15rem;
   color: #d06767;
 }
-.blogPage .col-inner .plain .from_the_blog_excerpt {
+.blogPage .plain .from_the_blog_excerpt {
   color: #000;
 }
-.blogPage .col-inner .plain .badge {
+.blogPage .plain .badge {
   width: 3.8em;
   height: 3.8em;
   display: block;
 }
-.blogPage .col-inner .plain .post-date {
+.blogPage .plain .post-date {
   position: absolute;
   top: 7%;
   left: -6px;
@@ -1111,19 +1107,15 @@ body {
   background: #fff;
   color: #e32e2d;
 }
-.blogPage .col-inner .plain .post-date .badge-inner {
+.blogPage .plain .post-date .badge-inner {
   text-align: center;
   vertical-align: middle;
   padding: 2px;
   font-weight: bolder;
   white-space: nowrap;
 }
-.blogPage .col-inner .plain .post-date .badge-inner .post-date-day {
-  font-size: 1rem;
+.blogPage .plain .post-date .badge-inner .post-date-day {
   line-height: 16px;
-}
-.blogPage .col-inner .plain .post-date .badge-inner .is-xsmall {
-  font-size: 0.7rem;
 }
 .blogPage .plain:hover .from_the_blog_excerpt {
   color: #e7328e;
@@ -1169,6 +1161,46 @@ body {
 }
 .blogPage .widget p {
   font-size: 16px;
+}
+@media only screen and (width < 992px) {
+  .blogPage {
+    max-width: 95%;
+    margin: auto;
+  }
+  .blogPage .blog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .blogPage .postform {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+  }
+}
+@media only screen and (width < 768px) {
+  .blogPage {
+    max-width: 95%;
+    margin: auto;
+  }
+  .blogPage .plain {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .blogPage .plain .box-image img {
+    width: 100%;
+  }
+  .blogPage .plain .box-text {
+    padding: 0;
+  }
+  .blogPage .postform {
+    width: 100%;
+    padding: 4px;
+    border: 1px solid #ddd;
+    background-color: #ddd;
+  }
 }
 
 /*#region width*/

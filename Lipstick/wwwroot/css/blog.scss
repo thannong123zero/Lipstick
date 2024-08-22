@@ -6,10 +6,8 @@
     padding: 30px 0;
 
     @include respond(map-get($breakPoint,"lg")) {
-        padding: 0 1rem;
     }
-
-    .large-9 {
+    /* .large-9 {
         max-width: 75%;
     }
 
@@ -17,7 +15,7 @@
         max-width: 25%;
         border-left: 1px solid #ececec;
         padding: 0 30px 30px;
-    }
+    }*/
 
     .archive-page-header {
         .is-large {
@@ -28,69 +26,62 @@
 
     .col-inner {
         position: relative;
+    }
 
-        .plain {
-            display: flex;
-            list-style: none;
-            text-decoration: none;
+    .plain {
+        display: flex;
+        list-style: none;
+        text-decoration: none;
 
-            .box-image {
-                img {
-                    width: 300px;
-                    height: 175px;
-                    object-fit: cover
-                }
+        .box-image img {
+            width: 300px;
+            height: 175px;
+            object-fit: cover
+        }
+
+        .box-text {
+            padding: 0.7rem 1.5rem 1.4rem;
+            position: relative;
+            width: 100%;
+            font-size: .9rem;
+
+            .post-title {
+                font-size: 1.15rem;
+                color: #d06767;
             }
-
-            .box-text {
-                padding: 0.7rem 1.5rem 1.4rem;
-                position: relative;
-                width: 100%;
-                font-size: .9rem;
-
-                .post-title {
-                    font-size: 1.15rem;
-                    color: #d06767;
-                }
-            }
+        }
 
 
 
-            .from_the_blog_excerpt {
-                color: #000;
-            }
+        .from_the_blog_excerpt {
+            color: #000;
+        }
 
-            .badge {
-                width: 3.8em;
-                height: 3.8em;
-                display: block;
-            }
+        .badge {
+            width: 3.8em;
+            height: 3.8em;
+            display: block;
+        }
 
-            .post-date {
-                position: absolute;
-                top: 7%;
-                left: -6px;
-                border: 2px solid #e32e2d;
-                border-radius: unset;
-                background: #fff;
-                color: #e32e2d;
+        .post-date {
+            position: absolute;
+            top: 7%;
+            left: -6px;
+            border: 2px solid #e32e2d;
+            border-radius: unset;
+            background: #fff;
+            color: #e32e2d;
 
 
-                .badge-inner {
-                    text-align: center;
-                    vertical-align: middle;
-                    padding: 2px;
-                    font-weight: bolder;
-                    white-space: nowrap;
+            .badge-inner {
+                text-align: center;
+                vertical-align: middle;
+                padding: 2px;
+                font-weight: bolder;
+                white-space: nowrap;
 
-                    .post-date-day {
-                        font-size: 1rem;
-                        line-height: 16px;
-                    }
-
-                    .is-xsmall {
-                        font-size: .7rem;
-                    }
+                .post-date-day {
+                    line-height: 16px;
                 }
             }
         }
@@ -148,6 +139,51 @@
 
         p {
             font-size: 16px;
+        }
+    }
+
+    @include respond(map-get($breakPoint,"md")) {
+        max-width: 95%;
+        margin: auto;
+
+        .blog-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .postform {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #ddd;
+            background-color: #ddd;
+        }
+    }
+
+    @include respond(map-get($breakPoint,"sm")) {
+        max-width: 95%;
+        margin: auto;
+
+        .plain {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .box-image img {
+                width: 100%;
+            }
+
+            .box-text {
+                padding: 0;
+            }
+        }
+
+
+        .postform {
+            width: 100%;
+            padding: 4px;
+            border: 1px solid #ddd;
+            background-color: #ddd;
         }
     }
 }
