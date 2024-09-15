@@ -37,4 +37,8 @@
     <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="_Convergence\Common\" />
+  </ItemGroup>
+
 </Project>

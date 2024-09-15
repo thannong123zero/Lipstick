@@ -1,7 +1,5 @@
-using API.ContextObject;
-using API.Helpers;
-using API.IRepositories;
-using API.Repositories;
+using API._Convergence.BussinessLogic.Helpers;
+using API._Convergence.DataAccess.ContextObject;
 using Microsoft.EntityFrameworkCore;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
@@ -27,7 +25,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<DatabaseContext>();
-builder.Services.AddTransient<UnitOfWork>();
+builder.Services.AddTransient<IUnitOfWork,UnitOfWork>();
 builder.Services.AddTransient<MenuGroupHelper>();
 builder.Services.AddTransient<MenuItemHelper>();
 builder.Services.AddTransient<UnitHelper>();
