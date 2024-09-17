@@ -1,6 +1,4 @@
-﻿using API.ContextObject;
-using API.Helpers;
-using API.IRepositories;
+﻿using API._Convergence.BussinessLogic.Helpers;
 using AutoMapper;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http.HttpResults;
